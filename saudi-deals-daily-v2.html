@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0f1117">
+<meta name="description" content="دليل العروض اليومية السعودي — أفضل خصومات 70+ متجر">
+
+<!-- PWA Manifest inline -->
+<link rel="manifest" href="data:application/json,%7B%22name%22%3A%22%D8%AF%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B6%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%22%2C%22short_name%22%3A%22%D8%B9%D8%B1%D9%88%D8%B6%20%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%22%2C%22start_url%22%3A%22.%2F%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%230f1117%22%2C%22theme_color%22%3A%22%23f5c842%22%7D">
+
+<title>🛍️ دليل العروض اليومية — السعودية</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#0f1117;--bg2:#1a1d27;--bg3:#22263a;--card:#1e2236;--card-hover:#252942;
+    --border:rgba(255,255,255,0.07);--border-hover:rgba(255,255,255,0.16);
+    --gold:#f5c842;--gold2:#e8a800;--teal:#2dd4bf;--teal2:#14b8a6;--rose:#fb7185;
+    --text:#f0f2ff;--text2:#9ca3c4;--text3:#5c6180;
+    --green:#4ade80;--blue:#60a5fa;--purple:#a78bfa;--orange:#fb923c;--pink:#f472b6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+  body::before{content:'';position:fixed;top:-50%;left:-50%;width:200%;height:200%;
+    background:radial-gradient(ellipse at 20% 20%,rgba(245,200,66,.04) 0%,transparent 50%),
+               radial-gradient(ellipse at 80% 80%,rgba(45,212,191,.04) 0%,transparent 50%),
+               radial-gradient(ellipse at 50% 50%,rgba(96,165,250,.02) 0%,transparent 60%);
+    pointer-events:none;z-index:0}
+
+  /* ── HEADER ── */
+  header{position:sticky;top:0;z-index:100;background:rgba(15,17,23,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px}
+  .header-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:20px;min-height:64px;flex-wrap:wrap;padding:8px 0}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+  .logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--gold2));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px}
+  .logo-text{font-size:18px;font-weight:900;color:var(--text);line-height:1}
+  .logo-sub{font-size:10px;color:var(--text3);font-weight:400}
+  .header-date{margin-right:auto;font-size:12px;color:var(--text3);background:var(--bg2);padding:6px 14px;border-radius:20px;border:1px solid var(--border);white-space:nowrap}
+  .header-date span{color:var(--gold);font-weight:700}
+
+  /* ── SEARCH ── */
+  .search-wrap{position:relative;flex:1;min-width:200px;max-width:340px}
+  .search-wrap input{width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:9px 40px 9px 14px;color:var(--text);font-family:'Cairo',sans-serif;font-size:13px;outline:none;transition:border .2s}
+  .search-wrap input:focus{border-color:var(--gold)}
+  .search-wrap input::placeholder{color:var(--text3)}
+  .search-icon{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:16px;pointer-events:none}
+
+  /* ── REFRESH STATUS ── */
+  .refresh-bar{background:var(--bg2);border-bottom:1px solid var(--border);padding:6px 24px;font-size:11px;color:var(--text3);display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+  .refresh-bar .dot-live{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse-dot 1.8s infinite;flex-shrink:0}
+  @keyframes pulse-dot{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(74,222,128,.5)}50%{opacity:.7;box-shadow:0 0 0 5px rgba(74,222,128,0)}}
+  .refresh-bar .check-status-btn{background:transparent;border:1px solid var(--border);border-radius:8px;padding:3px 12px;color:var(--text2);font-family:'Cairo',sans-serif;font-size:11px;cursor:pointer;transition:all .15s}
+  .refresh-bar .check-status-btn:hover{border-color:var(--teal);color:var(--teal)}
+
+  /* ── MAIN ── */
+  main{max-width:1400px;margin:0 auto;padding:28px 24px 60px;position:relative;z-index:1}
+
+  /* ── STATS ── */
+  .stats-row{display:flex;gap:12px;margin-bottom:28px;flex-wrap:wrap}
+  .stat-pill{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:10px 18px;font-size:13px}
+  .stat-pill .num{font-size:20px;font-weight:900;color:var(--gold);line-height:1}
+  .stat-pill .lbl{color:var(--text2)}
+
+  /* ── CATEGORY TABS ── */
+  .tabs-wrap{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-bottom:24px;scrollbar-width:none}
+  .tabs-wrap::-webkit-scrollbar{display:none}
+  .tab{flex-shrink:0;background:var(--bg2);border:1px solid var(--border);border-radius:24px;padding:8px 18px;font-family:'Cairo',sans-serif;font-size:13px;color:var(--text2);cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:6px;white-space:nowrap}
+  .tab:hover{border-color:var(--border-hover);color:var(--text)}
+  .tab.active{background:var(--gold);border-color:var(--gold);color:#0f1117;font-weight:700}
+  .tab .count{background:rgba(0,0,0,.15);border-radius:10px;padding:1px 7px;font-size:11px}
+  .tab.active .count{background:rgba(0,0,0,.2)}
+
+  /* ── ORIGIN FILTER ── */
+  .origin-row{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;align-items:center}
+  .origin-label{font-size:12px;color:var(--text3)}
+  .origin-btn{background:transparent;border:1px solid var(--border);border-radius:8px;padding:5px 14px;font-family:'Cairo',sans-serif;font-size:12px;color:var(--text2);cursor:pointer;transition:all .15s}
+  .origin-btn:hover{border-color:var(--border-hover);color:var(--text)}
+  .origin-btn.active{border-color:var(--teal);color:var(--teal);background:rgba(45,212,191,.08)}
+
+  /* ── RESULTS INFO ── */
+  .results-info{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+  .results-info .count-text{font-size:13px;color:var(--text3)}
+  .results-info .count-text strong{color:var(--gold)}
+  .view-toggle{display:flex;gap:4px}
+  .view-btn{background:var(--bg2);border:1px solid var(--border);border-radius:8px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;color:var(--text3);transition:all .15s}
+  .view-btn.active{border-color:var(--gold);color:var(--gold)}
+
+  /* ── GRID ── */
+  #grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;transition:opacity .2s}
+  #grid.list-view{grid-template-columns:1fr}
+
+  /* ── SITE CARD ── */
+  .site-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;cursor:pointer;transition:all .2s;display:flex;flex-direction:column;gap:12px;animation:fadeUp .35s ease both;position:relative;overflow:hidden}
+  .site-card::before{content:'';position:absolute;top:0;right:0;width:80px;height:80px;background:radial-gradient(circle,var(--accent-color,rgba(245,200,66,.1)) 0%,transparent 70%);pointer-events:none}
+  .site-card:hover{background:var(--card-hover);border-color:var(--border-hover);transform:translateY(-2px)}
+  .site-card.hidden-404{display:none!important}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+  /* ── LIVE INDICATOR ── */
+  .live-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse-dot 1.8s infinite;display:inline-block;margin-right:4px;flex-shrink:0}
+  .live-dot.stale{background:var(--text3);animation:none}
+
+  /* ── CARD HEADER ── */
+  .card-header{display:flex;align-items:flex-start;gap:12px}
+  .site-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;position:relative;z-index:1}
+  .card-info{flex:1;min-width:0}
+  .site-name{font-size:15px;font-weight:700;color:var(--text);line-height:1.3;margin-bottom:3px;display:flex;align-items:center;gap:6px}
+  .site-cat{font-size:11px;color:var(--text3)}
+  .origin-badge{font-size:10px;padding:2px 9px;border-radius:8px;font-weight:600;align-self:flex-start;margin-top:4px;display:inline-block}
+  .site-desc{font-size:12px;color:var(--text2);line-height:1.6;flex:1}
+
+  /* ── DISCOUNT BADGE ── */
+  .discount-badge{position:absolute;top:12px;left:12px;background:linear-gradient(135deg,#ef4444,#dc2626);color:#fff;font-size:11px;font-weight:900;padding:3px 10px;border-radius:10px;z-index:2;direction:ltr}
+
+  /* ── CARD FOOTER ── */
+  .card-footer{display:flex;gap:8px;flex-wrap:wrap}
+  .deal-btn{flex:1;background:linear-gradient(135deg,var(--gold),var(--gold2));border:none;border-radius:12px;padding:10px 14px;font-family:'Cairo',sans-serif;font-size:13px;font-weight:700;color:#0f1117;cursor:pointer;transition:all .15s;text-decoration:none;text-align:center;display:block;min-width:100px}
+  .deal-btn:hover{opacity:.9;transform:scale(.98)}
+  .fav-btn{width:40px;height:40px;background:var(--bg2);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;transition:all .15s;flex-shrink:0}
+  .fav-btn:hover{border-color:var(--rose)}
+  .fav-btn.faved{color:var(--rose);border-color:var(--rose);background:rgba(251,113,133,.1)}
+
+  /* ── COUPON BTN ── */
+  .coupon-btn{background:rgba(45,212,191,.1);border:1px solid var(--teal);border-radius:12px;padding:6px 12px;font-family:'Cairo',sans-serif;font-size:11px;font-weight:700;color:var(--teal);cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:5px;white-space:nowrap}
+  .coupon-btn:hover{background:rgba(45,212,191,.2)}
+  .coupon-btn.copied{background:rgba(74,222,128,.1);border-color:var(--green);color:var(--green)}
+
+  /* ── LIST VIEW ── */
+  #grid.list-view .site-card{flex-direction:row;align-items:center;padding:14px 18px;gap:14px}
+  #grid.list-view .site-icon{width:44px;height:44px;font-size:20px}
+  #grid.list-view .card-header{flex:1}
+  #grid.list-view .site-desc{display:none}
+  #grid.list-view .card-footer{margin-top:0;flex-shrink:0}
+  #grid.list-view .fav-btn{display:none}
+
+  /* ── FAV SECTION ── */
+  .section-title{font-size:16px;font-weight:700;color:var(--text);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .section-title .badge{background:rgba(251,113,133,.2);color:var(--rose);border-radius:8px;padding:2px 10px;font-size:12px}
+  .fav-section{margin-bottom:32px}
+  .fav-section .section-title{color:var(--rose)}
+
+  /* ── STATUS CHECK OVERLAY ── */
+  #status-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;align-items:center;justify-content:center;backdrop-filter:blur(8px)}
+  #status-modal.open{display:flex}
+  .status-box{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:28px;max-width:520px;width:90%;max-height:80vh;overflow-y:auto}
+  .status-box h3{font-size:16px;font-weight:700;margin-bottom:16px;color:var(--gold)}
+  .status-item{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-radius:10px;margin-bottom:6px;font-size:13px;background:var(--card)}
+  .status-item .s-name{font-weight:600}
+  .status-item .s-badge{padding:2px 10px;border-radius:8px;font-size:11px;font-weight:700}
+  .status-item .s-badge.ok{background:rgba(74,222,128,.15);color:var(--green)}
+  .status-item .s-badge.warn{background:rgba(251,146,60,.15);color:var(--orange)}
+  .status-item .s-badge.err{background:rgba(251,113,133,.15);color:var(--rose)}
+  .status-item .s-badge.checking{background:rgba(96,165,250,.1);color:var(--blue)}
+  .close-modal{background:var(--bg3);border:none;border-radius:10px;padding:10px 24px;font-family:'Cairo',sans-serif;font-size:13px;color:var(--text2);cursor:pointer;margin-top:12px;transition:all .15s}
+  .close-modal:hover{color:var(--text)}
+
+  /* ── TOAST ── */
+  #toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:12px 24px;font-size:13px;opacity:0;transition:all .3s;pointer-events:none;z-index:300;white-space:nowrap}
+  #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+  /* ── EMPTY ── */
+  #empty{display:none;text-align:center;padding:60px 20px;color:var(--text3)}
+  #empty .e-icon{font-size:48px;margin-bottom:12px}
+
+  /* ── FOOTER ── */
+  footer{border-top:1px solid var(--border);padding:24px;text-align:center;font-size:12px;color:var(--text3)}
+
+  /* ── LOADING ── */
+  #loading{text-align:center;padding:60px;color:var(--text3);font-size:14px}
+  .spinner{width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 16px}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  /* ── TOP DEAL BANNER ── */
+  .top-deal-banner{background:linear-gradient(135deg,rgba(245,200,66,.12),rgba(232,168,0,.06));border:1px solid rgba(245,200,66,.2);border-radius:16px;padding:16px 20px;margin-bottom:24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .top-deal-banner .fire{font-size:28px;flex-shrink:0}
+  .top-deal-banner .tdb-content{flex:1}
+  .top-deal-banner .tdb-title{font-size:13px;font-weight:700;color:var(--gold);margin-bottom:4px}
+  .top-deal-banner .tdb-sub{font-size:12px;color:var(--text2)}
+
+  /* ── PWA INSTALL BANNER ── */
+  #pwa-banner{display:none;background:linear-gradient(135deg,rgba(96,165,250,.1),rgba(167,139,250,.1));border:1px solid rgba(96,165,250,.2);border-radius:14px;padding:14px 18px;margin-bottom:20px;align-items:center;gap:12px}
+  #pwa-banner.show{display:flex}
+  #pwa-banner .pwa-text{flex:1;font-size:13px;color:var(--text2)}
+  #pwa-banner .pwa-text strong{color:var(--blue);display:block;margin-bottom:2px}
+  .pwa-install-btn{background:linear-gradient(135deg,var(--blue),#3b82f6);border:none;border-radius:10px;padding:8px 18px;font-family:'Cairo',sans-serif;font-size:12px;font-weight:700;color:#fff;cursor:pointer}
+  .pwa-dismiss{background:transparent;border:none;color:var(--text3);font-size:18px;cursor:pointer;padding:4px}
+
+  /* ── AFFILIATE NOTE ── */
+  .affiliate-strip{font-size:11px;color:var(--text3);text-align:center;padding:8px;margin-bottom:20px}
+  .affiliate-strip a{color:var(--teal);text-decoration:none}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#">
+      <div class="logo-icon">🛍️</div>
+      <div>
+        <div class="logo-text">عروض السعودية</div>
+        <div class="logo-sub">دليل العروض اليومي</div>
+      </div>
+    </a>
+
+    <div class="search-wrap">
+      <input type="text" id="search" placeholder="ابحث عن متجر أو فئة..." oninput="applyFilters()">
+      <span class="search-icon">🔍</span>
+    </div>
+
+    <div class="header-date" id="live-date">—</div>
+  </div>
+</header>
+
+<!-- REFRESH STATUS BAR -->
+<div class="refresh-bar">
+  <span class="dot-live" id="live-dot"></span>
+  <span id="refresh-info">جاري تحميل البيانات...</span>
+  <button class="check-status-btn" onclick="openStatusModal()">🔎 فحص الروابط</button>
+  <button class="check-status-btn" onclick="forceRefresh()">🔄 تحديث الآن</button>
+</div>
+
+<main>
+
+  <!-- PWA INSTALL BANNER -->
+  <div id="pwa-banner">
+    <span style="font-size:24px">📲</span>
+    <div class="pwa-text">
+      <strong>ثبّت التطبيق على شاشتك الرئيسية!</strong>
+      وصول فوري لأفضل العروض دون متصفح
+    </div>
+    <button class="pwa-install-btn" onclick="installPWA()">تثبيت</button>
+    <button class="pwa-dismiss" onclick="document.getElementById('pwa-banner').classList.remove('show')">✕</button>
+  </div>
+
+  <!-- AFFILIATE NOTE -->
+  <div class="affiliate-strip" id="affiliate-strip" style="display:none">
+    ℹ️ بعض الروابط قد تكون روابط أفلييت — نكسب عمولة صغيرة عند شرائك بدون تكلفة إضافية عليك.
+  </div>
+
+  <!-- STATS ROW -->
+  <div class="stats-row">
+    <div class="stat-pill">🏪 <div><div class="num" id="total-num">—</div><div class="lbl">متجر</div></div></div>
+    <div class="stat-pill">🔥 <div><div class="num" id="shown-num">—</div><div class="lbl">نتيجة</div></div></div>
+    <div class="stat-pill">❤️ <div><div class="num" id="fav-num">0</div><div class="lbl">مفضلة</div></div></div>
+    <div class="stat-pill">✅ <div><div class="num" id="live-num">—</div><div class="lbl">محدّث اليوم</div></div></div>
+  </div>
+
+  <!-- TOP DEAL BANNER -->
+  <div class="top-deal-banner" id="top-deal-banner" style="display:none">
+    <div class="fire">🔥</div>
+    <div class="tdb-content">
+      <div class="tdb-title" id="top-deal-title">أعلى خصم اليوم</div>
+      <div class="tdb-sub" id="top-deal-sub">—</div>
+    </div>
+    <a class="deal-btn" id="top-deal-link" href="#" target="_blank" style="flex:unset;padding:10px 18px">عرض الآن</a>
+  </div>
+
+  <!-- CATEGORY TABS -->
+  <div class="tabs-wrap" id="tabs"></div>
+
+  <!-- ORIGIN FILTER -->
+  <div class="origin-row">
+    <span class="origin-label">المصدر:</span>
+    <button class="origin-btn active" onclick="setOrigin('الكل',this)">🌍 الكل</button>
+    <button class="origin-btn" onclick="setOrigin('سعودي',this)">🇸🇦 سعودي</button>
+    <button class="origin-btn" onclick="setOrigin('خليجي',this)">🏙️ خليجي</button>
+    <button class="origin-btn" onclick="setOrigin('عالمي',this)">🌐 عالمي</button>
+  </div>
+
+  <!-- RESULTS INFO -->
+  <div class="results-info">
+    <span class="count-text" id="count-text">جاري التحميل...</span>
+    <div class="view-toggle">
+      <button class="view-btn active" id="grid-btn" onclick="setView('grid')" title="عرض شبكي">⊞</button>
+      <button class="view-btn" id="list-btn" onclick="setView('list')" title="عرض قائمة">≡</button>
+    </div>
+  </div>
+
+  <!-- FAVORITES SECTION (dynamic) -->
+  <div class="fav-section" id="fav-section" style="display:none">
+    <div class="section-title">❤️ المفضلة <span class="badge" id="fav-badge">0</span></div>
+    <div id="fav-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px"></div>
+  </div>
+
+  <!-- LOADING -->
+  <div id="loading"><div class="spinner"></div>جاري تحميل العروض...</div>
+
+  <!-- MAIN GRID -->
+  <div id="grid" style="display:none"></div>
+
+  <!-- EMPTY -->
+  <div id="empty">
+    <div class="e-icon">🔍</div>
+    <div>لا توجد نتائج مطابقة</div>
+  </div>
+</main>
+
+<footer>
+  <div id="footer-date">—</div>
+  <div style="margin-top:6px">جميع الأسعار والعروض من المواقع الرسمية • يُنصح بمراجعة الموقع للتحقق من السعر الحالي</div>
+</footer>
+
+<!-- STATUS MODAL -->
+<div id="status-modal">
+  <div class="status-box">
+    <h3>🔎 فحص حالة الروابط</h3>
+    <div id="status-list"></div>
+    <button class="close-modal" onclick="closeStatusModal()">إغلاق</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<script>
+// ════════════════════════════════════════════════════════════════
+// CONFIG
+// ════════════════════════════════════════════════════════════════
+const JSON_URL      = 'sites.json';        // مصدر البيانات الخارجي
+const REFRESH_MS    = 2 * 60 * 60 * 1000; // كل ساعتين
+const LIVE_WINDOW_H = 24;                  // ساعة لإظهار نقطة Live
+const CHECK_TIMEOUT = 8000;                // مهلة فحص الرابط (ms)
+
+// ════════════════════════════════════════════════════════════════
+// STATE
+// ════════════════════════════════════════════════════════════════
+let SITES        = [];
+let favs         = JSON.parse(localStorage.getItem('favs') || '[]');
+let activeTab    = 'الكل';
+let activeOrigin = 'الكل';
+let currentView  = 'grid';
+let hiddenSites  = new Set();              // مخبأة بسبب 404
+let deferredPrompt = null;
+
+// ════════════════════════════════════════════════════════════════
+// FETCH DATA  —  يستدعي sites.json الخارجي
+// ════════════════════════════════════════════════════════════════
+async function loadData() {
+  document.getElementById('loading').style.display = 'block';
+  document.getElementById('grid').style.display    = 'none';
+
+  try {
+    const res  = await fetch(JSON_URL + '?t=' + Date.now());
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+
+    SITES = data.sites || [];
+    updateRefreshInfo(data.generated_at);
+    buildUI();
+  } catch (err) {
+    console.warn('⚠️ تعذّر تحميل sites.json — استخدام البيانات المدمجة:', err);
+    // Fallback: بيانات أساسية مدمجة
+    SITES = getFallbackSites();
+    updateRefreshInfo(null);
+    buildUI();
+  }
+}
+
+function getFallbackSites() {
+  return [
+    {name:"أمازون السعودية",url:"https://www.amazon.sa/deals",cat:"متعدد",emoji:"📦",bg:"#1a1200",org:"عالمي",desc:"أكبر متجر إلكتروني بعروض يومية حصرية وشحن سريع",active:true,last_updated:new Date().toISOString()},
+    {name:"نون السعودية",url:"https://www.noon.com/saudi-ar/sale/",cat:"متعدد",emoji:"🌙",bg:"#2a2000",org:"خليجي",desc:"المنصة الخليجية الأولى بعروض تصل حتى 70%",active:true,discount:60,coupon:"NOON15",last_updated:new Date().toISOString()},
+    {name:"نمشي",url:"https://sa.namshi.com/sale/",cat:"أزياء",emoji:"👗",bg:"#1a001a",org:"خليجي",desc:"أزياء وأحذية راقية بخصومات كبيرة",active:true,discount:40,coupon:"NAMSHI10",last_updated:new Date().toISOString()},
+    {name:"كارفور السعودية",url:"https://www.carrefourksa.com/mafsau/ar/deals",cat:"بقالة",emoji:"🛒",bg:"#001a2a",org:"عالمي",desc:"تسوق أسبوعي بأسعار لا تقبل المنافسة",active:true,last_updated:new Date().toISOString()},
+    {name:"إكسترا",url:"https://www.extra.com.sa/ar/offers",cat:"إلكترونيات",emoji:"🖥️",bg:"#2a0010",org:"سعودي",desc:"أكبر متجر إلكترونيات سعودي بعروض مستمرة",active:true,discount:35,last_updated:new Date().toISOString()},
+    {name:"نايكي السعودية",url:"https://www.nike.com/sa/w/sale",cat:"رياضة",emoji:"✔️",bg:"#001a08",org:"عالمي",desc:"أحذية وملابس رياضية بتخفيضات موسمية كبيرة",active:true,discount:45,last_updated:new Date().toISOString()},
+    {name:"أيكيا السعودية",url:"https://www.ikea.com/sa/ar/offers/",cat:"منزل",emoji:"🛋️",bg:"#001a2a",org:"عالمي",desc:"أثاث وديكور منزلي بأسعار مثالية وتصاميم عصرية",active:true,discount:20,last_updated:new Date().toISOString()},
+    {name:"النهدي",url:"https://www.nahdi.sa/ar/offers",cat:"صيدلية",emoji:"🏥",bg:"#001a10",org:"سعودي",desc:"صيدلية سعودية كبرى — منتجات صحية وجمال",active:true,last_updated:new Date().toISOString()},
+    {name:"شي إن",url:"https://sa.shein.com/sale-women-sc-00289729.html",cat:"أزياء",emoji:"👒",bg:"#2a001a",org:"عالمي",desc:"أزياء عصرية بأسعار منخفضة جداً وتحديثات يومية",active:true,discount:55,coupon:"SHEIN20",last_updated:new Date().toISOString()},
+    {name:"بنده",url:"https://www.bindawood.com/ar/offers",cat:"بقالة",emoji:"🥬",bg:"#002a10",org:"سعودي",desc:"سوبرماركت سعودي بعروض أسبوعية مميزة",active:true,last_updated:new Date().toISOString()},
+  ];
+}
+
+// ════════════════════════════════════════════════════════════════
+// BUILD UI  —  يبني الصفحة بعد تحميل البيانات
+// ════════════════════════════════════════════════════════════════
+function buildUI() {
+  // فلترة المتاجر غير النشطة
+  SITES = SITES.filter(s => s.active !== false);
+
+  const cats = ['الكل', ...new Set(SITES.map(s => s.cat))];
+  const emojis = {'الكل':'🏪','متعدد':'🛒','إلكترونيات':'📱','أزياء':'👗','بقالة':'🥬','جمال':'💄','منزل':'🛋️','رياضة':'⚽','أطفال':'🧸','صيدلية':'💊','إكسسوار':'⌚'};
+
+  const tabsEl = document.getElementById('tabs');
+  tabsEl.innerHTML = '';
+  cats.forEach(c => {
+    const count = c === 'الكل' ? SITES.length : SITES.filter(s => s.cat === c).length;
+    const btn = document.createElement('button');
+    btn.className = 'tab' + (c === 'الكل' ? ' active' : '');
+    btn.innerHTML = `${emojis[c]||'🏷️'} ${c} <span class="count">${count}</span>`;
+    btn.onclick = () => {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+      activeTab = c;
+      applyFilters();
+    };
+    tabsEl.appendChild(btn);
+  });
+
+  document.getElementById('total-num').textContent = SITES.length;
+
+  // إظهار أعلى خصم
+  showTopDeal();
+
+  // إحصاء المحدثة اليوم
+  const liveCount = SITES.filter(s => isLive(s)).length;
+  document.getElementById('live-num').textContent = liveCount;
+
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('grid').style.display = '';
+
+  applyFilters();
+}
+
+// ════════════════════════════════════════════════════════════════
+// LIVE CHECK  —  هل المتجر محدّث خلال 24 ساعة؟
+// ════════════════════════════════════════════════════════════════
+function isLive(site) {
+  const lu = site.last_updated || site.last_checked;
+  if (!lu) return false;
+  const diff = (Date.now() - new Date(lu).getTime()) / (1000 * 3600);
+  return diff <= LIVE_WINDOW_H;
+}
+
+// ════════════════════════════════════════════════════════════════
+// TOP DEAL BANNER
+// ════════════════════════════════════════════════════════════════
+function showTopDeal() {
+  const top = [...SITES].sort((a,b) => (b.discount||0)-(a.discount||0))[0];
+  if (!top || !top.discount) return;
+  document.getElementById('top-deal-banner').style.display = 'flex';
+  document.getElementById('top-deal-title').textContent = `🔥 أعلى خصم اليوم — ${top.name}`;
+  document.getElementById('top-deal-sub').textContent = `خصم يصل حتى ${top.discount}% — اضغط للاستفادة الآن`;
+  document.getElementById('top-deal-link').href = top.url;
+}
+
+// ════════════════════════════════════════════════════════════════
+// CARD MAKER
+// ════════════════════════════════════════════════════════════════
+function makeCard(s, inFavGrid = false) {
+  const orgColor = s.org==='سعودي'?'#4ade80':s.org==='خليجي'?'#60a5fa':'#a78bfa';
+  const orgBg    = s.org==='سعودي'?'rgba(74,222,128,.12)':s.org==='خليجي'?'rgba(96,165,250,.12)':'rgba(167,139,250,.12)';
+  const isFaved  = favs.includes(s.name);
+  const live     = isLive(s);
+
+  const card = document.createElement('div');
+  card.className = 'site-card';
+  card.id = 'card-' + s.name.replace(/\s/g,'_');
+  card.style.setProperty('--accent-color', (s.bg||'#1a1200') + '80');
+  if (hiddenSites.has(s.name)) card.classList.add('hidden-404');
+
+  // خصم badge
+  const discBadge = s.discount
+    ? `<div class="discount-badge">-${s.discount}%</div>`
+    : '';
+
+  // كوبون
+  const couponBtn = s.coupon
+    ? `<button class="coupon-btn" id="cpn-${s.name.replace(/\s/g,'_')}" onclick="copyCoupon('${s.coupon}','${s.name}')">🎟️ نسخ كود ${s.coupon}</button>`
+    : '';
+
+  card.innerHTML = `
+    ${discBadge}
+    <div class="card-header">
+      <div class="site-icon" style="background:${s.bg||'#1a1d27'}">${s.emoji||'🏪'}</div>
+      <div class="card-info">
+        <div class="site-name">
+          <span class="live-dot ${live?'':'stale'}" title="${live?'محدّث خلال 24 ساعة':'لم يُحدَّث مؤخراً'}"></span>
+          ${s.name}
+        </div>
+        <div class="site-cat">${s.cat}</div>
+        <div class="origin-badge" style="background:${orgBg};color:${orgColor}">${s.org}</div>
+      </div>
+    </div>
+    <div class="site-desc">${s.desc}</div>
+    <div class="card-footer">
+      <a class="deal-btn" href="${s.url}" target="_blank" rel="noopener" onclick="safeNavigate(event,'${s.url}')">🔗 شاهد العروض</a>
+      ${!inFavGrid?`<button class="fav-btn ${isFaved?'faved':''}" onclick="event.preventDefault();toggleFav('${s.name}')">${isFaved?'❤️':'🤍'}</button>`:''}
+    </div>
+    ${couponBtn ? `<div>${couponBtn}</div>` : ''}
+  `;
+  return card;
+}
+
+// ════════════════════════════════════════════════════════════════
+// FILTERS
+// ════════════════════════════════════════════════════════════════
+function applyFilters() {
+  const q = document.getElementById('search').value.toLowerCase();
+  const filtered = SITES.filter(s => {
+    if (hiddenSites.has(s.name)) return false;
+    const matchCat  = activeTab==='الكل'   || s.cat===activeTab;
+    const matchOrg  = activeOrigin==='الكل' || s.org===activeOrigin;
+    const matchQ    = !q || s.name.includes(q) || s.cat.includes(q) || (s.desc||'').includes(q) || s.org.includes(q);
+    return matchCat && matchOrg && matchQ;
+  });
+
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+  filtered.forEach((s,i) => {
+    const card = makeCard(s);
+    card.style.animationDelay = (i*.03)+'s';
+    grid.appendChild(card);
+  });
+
+  document.getElementById('shown-num').textContent = filtered.length;
+  document.getElementById('count-text').innerHTML = `عرض <strong>${filtered.length}</strong> متجر من أصل ${SITES.length}`;
+  document.getElementById('empty').style.display = filtered.length ? 'none' : 'block';
+
+  // Favorites
+  const favSites = SITES.filter(s => favs.includes(s.name));
+  const favSection = document.getElementById('fav-section');
+  const favGrid    = document.getElementById('fav-grid');
+  document.getElementById('fav-badge').textContent = favs.length;
+  document.getElementById('fav-num').textContent   = favs.length;
+
+  if (favs.length > 0) {
+    favSection.style.display = 'block';
+    favGrid.innerHTML = '';
+    favSites.forEach((s,i) => {
+      const c = makeCard(s, true);
+      c.style.animationDelay = (i*.05)+'s';
+      favGrid.appendChild(c);
+    });
+  } else {
+    favSection.style.display = 'none';
+  }
+}
+
+// ════════════════════════════════════════════════════════════════
+// SAFE REDIRECT  —  نظام التحقق من الرابط قبل التوجيه
+// ════════════════════════════════════════════════════════════════
+async function safeNavigate(event, url) {
+  // المتصفح يفتح الرابط في تبويب جديد مباشرة — نتحقق في الخلفية
+  // لأن HEAD cross-origin محظور، نستخدم fetch مع no-cors للفحص السريع
+  try {
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), CHECK_TIMEOUT);
+    const res = await fetch(url, { method:'HEAD', mode:'no-cors', signal: ctrl.signal });
+    clearTimeout(timer);
+    // no-cors يُعيد opaque response — نفترض نجاح إذا لم يُلقِ خطأ
+  } catch(e) {
+    if (e.name !== 'AbortError') {
+      // الرابط قد يكون معطوباً — نُبلّغ المستخدم
+      showToast('⚠️ تعذّر التحقق من الرابط — سيتم فتحه على مسؤوليتك');
+    }
+  }
+}
+
+// ════════════════════════════════════════════════════════════════
+// STATUS CHECK  —  فحص جميع الروابط وإخفاء 404
+// ════════════════════════════════════════════════════════════════
+async function checkAllLinks() {
+  const list = document.getElementById('status-list');
+  list.innerHTML = '';
+
+  // عرض عناصر الفحص
+  SITES.forEach(s => {
+    const item = document.createElement('div');
+    item.className = 'status-item';
+    item.id = 'si-' + s.name.replace(/\s/g,'_');
+    item.innerHTML = `
+      <span class="s-name">${s.emoji} ${s.name}</span>
+      <span class="s-badge checking">⏳ فحص...</span>
+    `;
+    list.appendChild(item);
+  });
+
+  // فحص كل رابط (no-cors لأن CORS غير متاح للـ HEAD cross-origin)
+  const checks = SITES.map(async s => {
+    const itemId = 'si-' + s.name.replace(/\s/g,'_');
+    const badge  = document.querySelector('#' + itemId + ' .s-badge');
+
+    try {
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), CHECK_TIMEOUT);
+      await fetch(s.url, { method:'HEAD', mode:'no-cors', signal: ctrl.signal });
+      clearTimeout(timer);
+
+      if (badge) {
+        badge.className = 's-badge ok';
+        badge.textContent = '✅ متاح';
+      }
+      hiddenSites.delete(s.name);
+    } catch(e) {
+      if (e.name === 'AbortError') {
+        if (badge) { badge.className = 's-badge warn'; badge.textContent = '⚠️ بطيء'; }
+      } else {
+        if (badge) { badge.className = 's-badge err'; badge.textContent = '❌ خطأ'; }
+        hiddenSites.add(s.name);
+        // إخفاء الكارد تلقائياً
+        const card = document.getElementById('card-' + s.name.replace(/\s/g,'_'));
+        if (card) card.classList.add('hidden-404');
+      }
+    }
+  });
+
+  await Promise.allSettled(checks);
+  showToast(`✅ اكتمل الفحص — ${hiddenSites.size} روابط معطوبة`);
+  applyFilters();
+}
+
+function openStatusModal()  {
+  document.getElementById('status-modal').classList.add('open');
+  checkAllLinks();
+}
+function closeStatusModal() {
+  document.getElementById('status-modal').classList.remove('open');
+}
+
+// ════════════════════════════════════════════════════════════════
+// COUPON COPY
+// ════════════════════════════════════════════════════════════════
+async function copyCoupon(code, storeName) {
+  try {
+    await navigator.clipboard.writeText(code);
+    const btn = document.getElementById('cpn-' + storeName.replace(/\s/g,'_'));
+    if (btn) {
+      btn.classList.add('copied');
+      btn.textContent = '✅ تم نسخ ' + code;
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        btn.innerHTML = `🎟️ نسخ كود ${code}`;
+      }, 2500);
+    }
+    showToast(`✅ تم نسخ كود "${code}"!`);
+  } catch {
+    showToast('📋 الكود: ' + code);
+  }
+}
+
+// ════════════════════════════════════════════════════════════════
+// HELPERS
+// ════════════════════════════════════════════════════════════════
+function setOrigin(o, el) {
+  activeOrigin = o;
+  document.querySelectorAll('.origin-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  applyFilters();
+}
+
+function setView(v) {
+  currentView = v;
+  document.getElementById('grid').classList.toggle('list-view', v==='list');
+  document.getElementById('grid-btn').classList.toggle('active', v==='grid');
+  document.getElementById('list-btn').classList.toggle('active', v==='list');
+}
+
+function toggleFav(name) {
+  if (favs.includes(name)) {
+    favs = favs.filter(f => f !== name);
+    showToast('تمت الإزالة من المفضلة');
+  } else {
+    favs.push(name);
+    showToast('✅ تمت الإضافة للمفضلة!');
+  }
+  localStorage.setItem('favs', JSON.stringify(favs));
+  applyFilters();
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+function updateDate() {
+  const now  = new Date();
+  const opts = { weekday:'long', year:'numeric', month:'long', day:'numeric' };
+  const ar   = now.toLocaleDateString('ar-SA', opts);
+  const time = now.toLocaleTimeString('ar-SA', { hour:'2-digit', minute:'2-digit' });
+  document.getElementById('live-date').innerHTML = `<span>${ar}</span> — ${time}`;
+  document.getElementById('footer-date').textContent = ar;
+}
+
+function updateRefreshInfo(generatedAt) {
+  const el = document.getElementById('refresh-info');
+  if (generatedAt) {
+    const d = new Date(generatedAt);
+    const rel = timeSince(d);
+    el.textContent = `آخر تحديث: ${rel} • يتجدد كل ساعتين`;
+    document.getElementById('live-dot').style.background =
+      (Date.now() - d) < 3600000 ? '' : 'var(--orange)';
+  } else {
+    el.textContent = 'بيانات مدمجة — لم يتم جلب sites.json';
+    document.getElementById('live-dot').style.background = 'var(--orange)';
+  }
+}
+
+function timeSince(date) {
+  const secs = Math.floor((Date.now() - date) / 1000);
+  if (secs < 60)  return 'الآن';
+  if (secs < 3600) return Math.floor(secs/60) + ' دقيقة';
+  if (secs < 86400) return Math.floor(secs/3600) + ' ساعة';
+  return Math.floor(secs/86400) + ' يوم';
+}
+
+async function forceRefresh() {
+  showToast('🔄 جاري إعادة التحميل...');
+  await loadData();
+  showToast('✅ تم التحديث!');
+}
+
+// ════════════════════════════════════════════════════════════════
+// PWA  —  Progressive Web App
+// ════════════════════════════════════════════════════════════════
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  deferredPrompt = e;
+  document.getElementById('pwa-banner').classList.add('show');
+});
+
+async function installPWA() {
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt();
+  const { outcome } = await deferredPrompt.userChoice;
+  if (outcome === 'accepted') showToast('✅ تم تثبيت التطبيق!');
+  deferredPrompt = null;
+  document.getElementById('pwa-banner').classList.remove('show');
+}
+
+// Service Worker (PWA offline support)
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+}
+
+// ════════════════════════════════════════════════════════════════
+// AUTO-REFRESH  —  كل ساعتين
+// ════════════════════════════════════════════════════════════════
+setInterval(loadData, REFRESH_MS);
+
+// ════════════════════════════════════════════════════════════════
+// INIT
+// ════════════════════════════════════════════════════════════════
+updateDate();
+setInterval(updateDate, 30_000);
+loadData();
+</script>
+</body>
+</html>
